@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Junit Test"
+           tests="2"
+           failures="0"
+           errors="0"
+           skipped="0"
+           time="0.496">
+  <properties />
+  
+  
+            <testcase name="loginFail" time="0.488" classname="dao.TestLogin" />
+                <testcase name="loginSuccess" time="0.008" classname="dao.TestLogin" />
+      
+</testsuite>
