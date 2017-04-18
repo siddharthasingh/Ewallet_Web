@@ -217,7 +217,7 @@
 			<id>test</id>
 			<properties>
 				<db.driverClass>com.mysql.jdbc.Driver</db.driverClass>
-				<db.connectionURL>jdbc:mysql://52.36.155.174:3306/wallet</db.connectionURL>
+				<db.connectionURL>jdbc:mysql://ec2-52-36-155-174.us-west-2.compute.amazonaws.com:3306/wallet</db.connectionURL>
 				<db.username>root</db.username>
 				<db.password>root</db.password>
 
