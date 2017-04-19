@@ -1,1 +1,19 @@
-hello i am new text file 
+3. Create a remote user and grant privileges.
+
+login to MySQL:
+
+mysql -u root -p mysql (enter password after this)
+
+Now write following commands:
+
+CREATE USER 'jerry'@'localhost' IDENTIFIED BY 'jerrypassword';
+
+CREATE USER 'jerry'@'%' IDENTIFIED BY 'jerrypassword';
+
+GRANT ALL PRIVILEGES ON *.* to jerry@localhost IDENTIFIED BY 'jerrypassword' WITH GRANT OPTION;
+
+GRANT ALL PRIVILEGES ON *.* to jerry@'%' IDENTIFIED BY 'jerrypassword' WITH GRANT OPTION;
+
+FLUSH PRIVILEGES;
+
+EXIT;
