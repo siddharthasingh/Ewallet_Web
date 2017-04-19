@@ -6,7 +6,7 @@ mysql -u root -p mysql (enter password after this)
 
 Now write following commands:
 
-CREATE USER 'jerry'@'localhost' IDENTIFIED BY 'jerrypassword';
+CREATE USER 'siddhartha'@'localhost' IDENTIFIED BY 'jerrypassword';
 
 CREATE USER 'jerry'@'%' IDENTIFIED BY 'jerrypassword';
 
