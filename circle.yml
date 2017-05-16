@@ -8,6 +8,9 @@ dependencies:
 test:
   override:
     - mvn integration-test -Dmaven.test.failure.ignore=true
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 general:
   artifacts:
     - "target/*.war" # relative to the build directory
@@ -17,15 +20,15 @@ compile:
   post:
     - mkdir $CIRCLE_ARTIFACTS/Ewallet
     - mv target/*.war $CIRCLE_ARTIFACTS/Ewallet
-deployment:
-  staging:
-    branch: master
-    codedeploy:
-      ewallet:
-        application_root: /
-        region: us-west-2
-        deployment_group: ewallet
-        deployment_config: CodeDeployDefault.AllAtOnce
+#deployment:
+#  staging:
+#    branch: master
+#    codedeploy:
+#      ewallet:
+#        application_root: /
+#        region: us-west-2
+#        deployment_group: ewallet
+#        deployment_config: CodeDeployDefault.AllAtOnce
 
 
 
