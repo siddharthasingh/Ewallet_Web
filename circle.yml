@@ -21,12 +21,12 @@ compile:
     - mkdir $CIRCLE_ARTIFACTS/Ewallet
     - mv target/*.war $CIRCLE_ARTIFACTS/Ewallet
 deployment:
-  override:
-    staging:
-      branch: master
+  staging:
+    branch: master
       codedeploy:
         ewallet:
-          deployment_group: ewallet
+          override:
+            deployment_group: ewallet
 
 
 
