@@ -4,9 +4,17 @@ machine:
 dependencies:
   override:
     - mvn --fail-never dependency:go-offline || true
-compile:
-  override:
-    - mvn clean install -Dmaven.test.skip=true -Pproduction
 test:
   override:
     - mvn integration-test -Dmaven.test.failure.ignore=true
+general:
+  artifacts:
+    - "target/*.war" # relative to the build directory
+compile:
+  override:
+    - mvn clean install -Dmaven.test.skip=true -Pproduction
+  post:
+    - mkdir $CIRCLE_ARTIFACTS/Ewallet
+    - mv target/*.war $CIRCLE_ARTIFACTS/Ewallet
+
+
