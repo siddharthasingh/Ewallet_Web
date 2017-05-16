@@ -7,3 +7,6 @@ dependencies:
 compile:
   override:
     - mvn clean install -Dmaven.test.skip=true -Pproduction
+test:
+  override:
+    - mvn integration-test -Dmaven.test.failure.ignore=true
