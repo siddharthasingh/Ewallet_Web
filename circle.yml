@@ -24,6 +24,7 @@ compile:
     - cp target/*.war /tmp/ewallet
     - cp appspec.yml /tmp/ewallet
     - zip /tmp/ewallet.zip /tmp/ewallet
+    - aws --version
 deployment:
   staging:
     branch: master
