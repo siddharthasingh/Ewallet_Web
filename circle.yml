@@ -23,7 +23,7 @@ compile:
     - mkdir /tmp/ewallet
     - cp target/*.war /tmp/ewallet
     - cp appspec.yml /tmp/ewallet
-    - zip -r ewaller.zip ewallet
+    - zip /tmp/ewallet.zip /tmp/ewallet
 deployment:
   staging:
     branch: master
