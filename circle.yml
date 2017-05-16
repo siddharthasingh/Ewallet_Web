@@ -20,15 +20,13 @@ compile:
   post:
     - mkdir $CIRCLE_ARTIFACTS/Ewallet
     - mv target/*.war $CIRCLE_ARTIFACTS/Ewallet
-#deployment:
-#  staging:
-#    branch: master
-#    codedeploy:
-#      ewallet:
-#        application_root: /
-#        region: us-west-2
-#        deployment_group: ewallet
-#        deployment_config: CodeDeployDefault.AllAtOnce
+deployment:
+  override:
+    staging:
+      branch: master
+      codedeploy:
+        ewallet:
+          deployment_group: ewallet
 
 
 
