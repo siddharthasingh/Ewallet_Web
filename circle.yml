@@ -19,7 +19,11 @@ compile:
     - mvn clean install -Dmaven.test.skip=true -Pproduction
   post:
     - mkdir $CIRCLE_ARTIFACTS/Ewallet
-    - mv target/*.war $CIRCLE_ARTIFACTS/Ewallet
+    - cp target/*.war $CIRCLE_ARTIFACTS/Ewallet
+    - mkdir /tmp/ewallet
+    - cp target/*.war /tmp/ewallet
+    - cp appsec.yml /tmp/ewallet
+    - zip -r ewaller.zip ewallet
 deployment:
   staging:
     branch: master
