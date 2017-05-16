@@ -23,10 +23,10 @@ compile:
 deployment:
   staging:
     branch: master
-      codedeploy:
-        ewallet:
-          override:
-            deployment_group: ewallet
+    codedeploy:
+      ewallet:
+        override:
+         deployment_group: ewallet
 
 
 
