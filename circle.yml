@@ -4,6 +4,7 @@ machine:
 dependencies:
   override:
     - mvn --fail-never dependency:go-offline || true
+    - ifconfig
 test:
   override:
     - mvn integration-test -Dmaven.test.failure.ignore=true
