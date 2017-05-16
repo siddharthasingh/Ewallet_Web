@@ -17,3 +17,8 @@ GRANT ALL PRIVILEGES ON *.* to jerry@'%' IDENTIFIED BY 'jerrypassword' WITH GRAN
 FLUSH PRIVILEGES;
 
 EXIT;
+
+
+
+
+http://studychacha.com/discuss/234728-bel-previous-years-cse-solved-question-papers.html
