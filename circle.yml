@@ -28,12 +28,15 @@ compile:
     - cp appspec.yml ewallet
     - zip /tmp/ewallet.zip /tmp/ewallet
     - aws --version
+    - sudo apt-get install python-dev
+    - export LC_ALL=C
+    - pip install --upgrade setuptools
 deployment:
   staging:
     branch: master
     codedeploy:
       ewallet:
-        application_root: ../../tmp/target
+        application_root: /target
         region: us-west-2
         revision_location:
           revision_type: S3
