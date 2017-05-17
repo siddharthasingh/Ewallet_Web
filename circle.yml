@@ -4,7 +4,6 @@ machine:
 dependencies:
   override:
     - mvn --fail-never dependency:go-offline || true
-    - ifconfig
 test:
   override:
     - mvn integration-test -Dmaven.test.failure.ignore=true
@@ -28,9 +27,8 @@ compile:
     - cp appspec.yml ewallet
     - zip /tmp/ewallet.zip /tmp/ewallet
     - aws --version
-    - sudo apt-get install python-dev
-    - export LC_ALL=C
-    - pip install --upgrade setuptools
+    - sudo apt-get build-dep python-numpy
+    - pip install numpy
 deployment:
   staging:
     branch: master
