@@ -18,16 +18,7 @@ compile:
     - mvn clean install -Dmaven.test.skip=true -Pproduction
   post:
     - mkdir $CIRCLE_ARTIFACTS/Ewallet
-    - cp target/*.war $CIRCLE_ARTIFACTS/Ewallet
-    - mkdir /tmp/ewallet
-    - cp target/*.war /tmp/ewallet
-    - cp appspec.yml /tmp/ewallet
-    - mkdir ewallet
-    - cp target/*.war ewallet
-    - cp appspec.yml ewallet
-    - zip /tmp/ewallet.zip /tmp/ewallet
-    - aws --version
-    - sudo apt-get install python-numpy
+    - cp target/*.war $CIRCLE_ARTIFACTS/Ewallet    
 deployment:
   staging:
     branch: master
