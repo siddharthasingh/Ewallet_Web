@@ -27,8 +27,7 @@ compile:
     - cp appspec.yml ewallet
     - zip /tmp/ewallet.zip /tmp/ewallet
     - aws --version
-    - sudo apt-get build-dep python-numpy
-    - pip install numpy
+    - sudo apt-get install python-numpy
 deployment:
   staging:
     branch: master
